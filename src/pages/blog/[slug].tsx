@@ -72,7 +72,7 @@ export async function getStaticPaths() {
 const RenderPost = ({
   post,
   blocks = [],
-  rankedPosts = [],
+  // rankedPosts = [],
   recentPosts = [],
   sameTagPosts = [],
   tags = [],

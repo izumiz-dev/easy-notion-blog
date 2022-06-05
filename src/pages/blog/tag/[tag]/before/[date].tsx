@@ -74,7 +74,7 @@ const RenderPostsByTagBeforeDate = ({
   date,
   posts = [],
   firstPost,
-  rankedPosts = [],
+  // rankedPosts = [],
   recentPosts = [],
   tags = [],
   tag,

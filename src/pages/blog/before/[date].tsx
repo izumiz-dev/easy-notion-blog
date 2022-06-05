@@ -64,7 +64,7 @@ const RenderPostsBeforeDate = ({
   date,
   posts = [],
   firstPost,
-  rankedPosts = [],
+  // rankedPosts = [],
   tags = [],
   redirect,
 }) => {
