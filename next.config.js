@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
+/* eslint-disable @typescript-eslint/no-unused-vars */
 const fs = require('fs')
 const path = require('path')
 const {
@@ -8,7 +10,7 @@ const {
 const warnOrError =
   process.env.NODE_ENV !== 'production' || process.env.GITHUB_ACTIONS
     ? console.warn
-    : msg => {
+    : (msg) => {
         throw new Error(msg)
       }
 

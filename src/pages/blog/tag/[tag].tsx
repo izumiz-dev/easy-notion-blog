@@ -8,11 +8,11 @@ import {
   NextPageLink,
   NoContents,
   PostDate,
-  PostExcerpt,
+  // PostExcerpt,
   PostTags,
   PostTitle,
   PostsNotFound,
-  ReadMoreLink,
+  // ReadMoreLink,
 } from '../../../components/blog-parts'
 import styles from '../../../styles/blog.module.css'
 import { getTagLink } from '../../../lib/blog-helpers'
@@ -62,7 +62,7 @@ export async function getStaticPaths() {
   const tags = await getAllTags()
 
   return {
-    paths: tags.map(tag => getTagLink(tag)),
+    paths: tags.map((tag) => getTagLink(tag)),
     fallback: 'blocking',
   }
 }
@@ -99,14 +99,14 @@ const RenderPostsByTags = ({
 
         <NoContents contents={posts} />
 
-        {posts.map(post => {
+        {posts.map((post) => {
           return (
             <div className={styles.post} key={post.Slug}>
               <PostDate post={post} />
               <PostTags post={post} />
               <PostTitle post={post} />
-              <PostExcerpt post={post} />
-              <ReadMoreLink post={post} />
+              {/* <PostExcerpt post={post} /> */}
+              {/* <ReadMoreLink post={post} /> */}
             </div>
           )
         })}
@@ -117,7 +117,7 @@ const RenderPostsByTags = ({
       </div>
 
       <div className={styles.subContent}>
-        <BlogPostLink heading="Recommended" posts={rankedPosts} />
+        {/* <BlogPostLink heading="Recommended" posts={rankedPosts} /> */}
         <BlogPostLink heading="Latest Posts" posts={recentPosts} />
         <BlogTagLink heading="Categories" tags={tags} />
       </div>

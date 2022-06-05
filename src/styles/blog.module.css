@@ -51,35 +51,47 @@
   margin: 1.8rem 0 0.8rem;
   color: var(--fg);
   font-size: 1.1rem;
-}
-.post :global(h4):after {
-  color: var(--accents-1);
-  font-size: 0.9rem;
-  content: '▼';
-  padding-left: 0.2rem;
+  background: var(--head-underline);
 }
 .post :global(h5) {
   margin: 1.8rem 0 0.8rem;
   color: var(--fg);
   font-size: 1.1rem;
-}
-.post :global(h5):after {
-  color: var(--accents-1);
-  font-size: 0.9rem;
-  content: '▼';
-  padding-left: 0.2rem;
+  background: var(--head-underline);
 }
 .post :global(h6) {
   margin: 1.8rem 0 0.8rem;
   color: var(--fg);
   font-size: 1.1rem;
+  background: var(--head-underline);
 }
-.post :global(h6):after {
+
+.post :global(h4):hover::after {
+  color: var(--accents-1);
+  font-size: 0.9rem;
+  content: '🔗';
+  padding-left: 0.2rem;
+}
+.post :global(h5):hover::after {
+  color: var(--accents-1);
+  font-size: 0.9rem;
+  content: '🔗';
+  padding-left: 0.2rem;
+}
+.post :global(h6):hover::after {
+  color: var(--accents-1);
+  font-size: 0.9rem;
+  content: '🔗';
+  padding-left: 0.2rem;
+}
+
+/* .post :global(h4):after {
   color: var(--accents-1);
   font-size: 0.9rem;
   content: '▼';
   padding-left: 0.2rem;
-}
+} */
+
 .post :global(p) {
   margin: 0.3rem 0;
   font-size: 1rem;

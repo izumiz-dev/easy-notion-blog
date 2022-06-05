@@ -1,7 +1,10 @@
 .container {
-  width: 100%;
+  width: 50vw;
   padding: 0 5%;
+  margin: 0 auto;
 }
-
-.content {
+@media (max-width: 600px) {
+  .container {
+    width: 100%;
+  }
 }

@@ -13,7 +13,7 @@ const Header = () => {
   const { asPath } = useRouter()
 
   const navItems: NavItem[] = [
-    { label: 'Home', path: '/' },
+    { label: 'About', path: '/' },
     { label: 'Blog', path: '/blog' },
   ]
 

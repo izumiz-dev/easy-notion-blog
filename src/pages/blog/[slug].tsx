@@ -39,19 +39,14 @@ export async function getStaticProps({ params: { slug } }) {
     }
   }
 
-  const [
-    blocks,
-    rankedPosts,
-    recentPosts,
-    tags,
-    sameTagPosts,
-  ] = await Promise.all([
-    getAllBlocksByBlockId(post.PageId),
-    getRankedPosts(),
-    getPosts(5),
-    getAllTags(),
-    getPostsByTag(post.Tags[0], 6),
-  ])
+  const [blocks, rankedPosts, recentPosts, tags, sameTagPosts] =
+    await Promise.all([
+      getAllBlocksByBlockId(post.PageId),
+      getRankedPosts(),
+      getPosts(5),
+      getAllTags(),
+      getPostsByTag(post.Tags[0], 6),
+    ])
 
   return {
     props: {
@@ -60,7 +55,7 @@ export async function getStaticProps({ params: { slug } }) {
       rankedPosts,
       recentPosts,
       tags,
-      sameTagPosts: sameTagPosts.filter(p => p.Slug !== post.Slug),
+      sameTagPosts: sameTagPosts.filter((p) => p.Slug !== post.Slug),
     },
     revalidate: 60,
   }
@@ -69,7 +64,7 @@ export async function getStaticProps({ params: { slug } }) {
 export async function getStaticPaths() {
   const posts = await getAllPosts()
   return {
-    paths: posts.map(post => getBlogLink(post.Slug)),
+    paths: posts.map((post) => getBlogLink(post.Slug)),
     fallback: 'blocking',
   }
 }
@@ -132,7 +127,7 @@ const RenderPost = ({
           heading="Posts in the same category"
           posts={sameTagPosts}
         />
-        <BlogPostLink heading="Recommended" posts={rankedPosts} />
+        {/* <BlogPostLink heading="Recommended" posts={rankedPosts} /> */}
         <BlogPostLink heading="Latest posts" posts={recentPosts} />
         <BlogTagLink heading="Categories" tags={tags} />
       </div>

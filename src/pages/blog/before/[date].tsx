@@ -4,16 +4,16 @@ import { useRouter } from 'next/router'
 import { NUMBER_OF_POSTS_PER_PAGE } from '../../../lib/notion/server-constants'
 import DocumentHead from '../../../components/document-head'
 import {
-  BlogPostLink,
+  // BlogPostLink,
   BlogTagLink,
   NextPageLink,
   NoContents,
   PostDate,
-  PostExcerpt,
+  // PostExcerpt,
   PostTags,
   PostTitle,
   PostsNotFound,
-  ReadMoreLink,
+  // ReadMoreLink,
 } from '../../../components/blog-parts'
 import styles from '../../../styles/blog.module.css'
 
@@ -91,14 +91,14 @@ const RenderPostsBeforeDate = ({
 
         <NoContents contents={posts} />
 
-        {posts.map(post => {
+        {posts.map((post) => {
           return (
             <div className={styles.post} key={post.Slug}>
               <PostDate post={post} />
               <PostTags post={post} />
               <PostTitle post={post} />
-              <PostExcerpt post={post} />
-              <ReadMoreLink post={post} />
+              {/* <PostExcerpt post={post} /> */}
+              {/* <ReadMoreLink post={post} /> */}
             </div>
           )
         })}
@@ -109,7 +109,7 @@ const RenderPostsBeforeDate = ({
       </div>
 
       <div className={styles.subContent}>
-        <BlogPostLink heading="Recommended" posts={rankedPosts} />
+        {/* <BlogPostLink heading="Recommended" posts={rankedPosts} /> */}
         <BlogTagLink heading="Categories" tags={tags} />
       </div>
     </div>

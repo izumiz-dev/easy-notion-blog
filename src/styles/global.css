@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c&display=swap');
 :root {
   --gap-quarter: 0.25rem;
   --gap-half: 0.5rem;
@@ -6,19 +7,24 @@
 
   --bg: #fff;
   --fg: #333;
-  --accents-1: #0070f3;
-  --accents-2: #3291ff;
+  --accents-1: #7276e0;
+  --accents-2: #a2a4e9;
   --accents-3: #666;
   --geist-foreground: #000;
   --geist-success: rgb(15, 95, 244);
 
   --radius: 4px;
 
-  --font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  --font-sans: 'M PLUS Rounded 1c', -apple-system, BlinkMacSystemFont,
+    'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans',
+    'Droid Sans', 'Helvetica Neue', sans-serif;
   --font-mono: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
     Bitstream Vera Sans Mono, Courier New, monospace;
+
+  --head-underline: linear-gradient(
+    transparent 70%,
+    rgba(201, 203, 255, 0.6) 70%
+  );
 }
 
 * {
@@ -37,18 +43,20 @@ body {
   min-height: 100vh;
   background: var(--bg);
   color: var(--fg);
-  font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, Segoe UI,
-    Hiragino Kaku Gothic ProN, Hiragino Sans, ヒラギノ角ゴ ProN W3, Arial,
-    メイリオ, Meiryo, sans-serif;
-  /*-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-  */
+  font-family: 'M PLUS Rounded 1c', -apple-system, BlinkMacSystemFont,
+    Helvetica Neue, Segoe UI, Hiragino Kaku Gothic ProN, Hiragino Sans,
+    ヒラギノ角ゴ ProN W3, Arial, メイリオ, Meiryo, sans-serif;
 
-  /*background-image: radial-gradient(#ddd 1px, transparent 1px),
-    radial-gradient(#ddd 1px, transparent 1px);*/
-  background-position: 0 0, 25px 25px;
-  background-attachment: fixed;
-  background-size: 50px 50px;
+  background-color: #fcfcfc;
+  background-image: linear-gradient(
+      rgba(233, 233, 233, 0.5) 2px,
+      transparent 2px
+    ),
+    linear-gradient(90deg, rgba(233, 233, 233, 0.5) 2px, transparent 2px),
+    linear-gradient(rgba(233, 233, 233, 0.28) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(233, 233, 233, 0.28) 1px, transparent 1px);
+  background-size: 100px 100px, 100px 100px, 20px 20px, 20px 20px;
+  background-position: -2px -2px, -2px -2px, -1px -1px, -1px -1px;
 
   /* Hack */
   overflow-x: hidden;
@@ -67,6 +75,7 @@ pre[class*='language-'] {
   line-height: 1.4rem;
   tab-size: 4;
   hyphens: none;
+  -webkit-hyphens: none;
 }
 .token.comment,
 .token.prolog,
@@ -257,14 +266,14 @@ h3 {
 }
 
 ol {
-  color: #222;
+  color: var(--fg);
   font-weight: 400;
   font-size: 0.9rem;
   line-height: 1.8rem;
 }
 p,
 ul {
-  color: #222;
+  color: var(--fg);
   font-weight: 400;
   font-size: 1rem;
   line-height: 1.8rem;
@@ -297,7 +306,7 @@ code {
 }
 
 table {
-  color: #222;
+  color: var(--fg);
   border-collapse: collapse;
 }
 

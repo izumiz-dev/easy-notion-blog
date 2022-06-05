@@ -10,19 +10,28 @@
   padding-right: 0.8rem;
 }
 
-.postTitle {
-  font-size: 1.6rem;
-  color: var(--fg);
-}
-@media (max-width: 600px) {
-  .postTitle {
-    font-size: 1.2rem;
-  }
-}
 .postTitle a {
+  position: relative;
   font-size: 1.2rem;
   color: inherit;
 }
+.postTitle a::after {
+  position: absolute;
+  bottom: 0px;
+  left: 0;
+  content: '';
+  width: 100%;
+  height: 2px;
+  background: var(--accents-2);
+  transform: scale(0, 1);
+  transform-origin: left top;
+  transition: transform 0.5s;
+}
+
+.postTitle a:hover::after {
+  transform: scale(1, 1);
+}
+
 @media (max-width: 600px) {
   .postTitle a {
     font-size: 1.15rem;
