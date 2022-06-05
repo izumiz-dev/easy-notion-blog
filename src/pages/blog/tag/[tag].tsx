@@ -71,7 +71,7 @@ const RenderPostsByTags = ({
   tag,
   posts = [],
   firstPost,
-  rankedPosts = [],
+  // rankedPosts = [],
   recentPosts = [],
   tags = [],
   redirect,
