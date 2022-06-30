@@ -1,6 +1,7 @@
 .container {
-  width: 50vw;
-  padding: 0 5%;
+  min-width: 1024px;
+  max-width: 70vw;
+  padding: 0 10%;
   margin: 0 auto;
 }
 @media (max-width: 600px) {

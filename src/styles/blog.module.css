@@ -9,7 +9,7 @@
 }
 
 .mainContent {
-  width: 60%;
+  width: 65%;
 }
 @media (max-width: 600px) {
   .mainContent {
@@ -32,7 +32,7 @@
 }
 
 .subContent {
-  width: 35%;
+  width: 30%;
 }
 @media (max-width: 600px) {
   .subContent {
