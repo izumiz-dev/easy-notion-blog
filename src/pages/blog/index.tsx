@@ -44,31 +44,33 @@ const RenderPosts = ({
   tags = [],
 }) => {
   return (
-    <div className={styles.container}>
-      <DocumentHead title="Blog" />
+    <div style={{ display: 'flex', justifyContent: 'center' }}>
+      <div className={styles.container}>
+        <DocumentHead title="Blog" />
 
-      <div className={styles.mainContent}>
-        <NoContents contents={posts} />
+        <div className={styles.mainContent}>
+          <NoContents contents={posts} />
 
-        {posts.map((post) => {
-          return (
-            <div className={styles.post} key={post.Slug}>
-              <PostDate post={post} />
-              <PostTags post={post} />
-              <PostTitle post={post} />
-              {/* <PostExcerpt post={post} /> */}
-            </div>
-          )
-        })}
+          {posts.map((post) => {
+            return (
+              <div className={styles.post} key={post.Slug}>
+                <PostDate post={post} />
+                <PostTags post={post} />
+                <PostTitle post={post} />
+                {/* <PostExcerpt post={post} /> */}
+              </div>
+            )
+          })}
 
-        <footer>
-          <NextPageLink firstPost={firstPost} posts={posts} />
-        </footer>
-      </div>
+          <footer>
+            <NextPageLink firstPost={firstPost} posts={posts} />
+          </footer>
+        </div>
 
-      <div className={styles.subContent}>
-        {/* <BlogPostLink heading="Recommended" posts={rankedPosts} /> */}
-        <BlogTagLink heading="Categories" tags={tags} />
+        <div className={styles.subContent}>
+          {/* <BlogPostLink heading="Recommended" posts={rankedPosts} /> */}
+          <BlogTagLink heading="Categories" tags={tags} />
+        </div>
       </div>
     </div>
   )

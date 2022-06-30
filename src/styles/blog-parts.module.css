@@ -26,6 +26,7 @@
   transform: scale(0, 1);
   transform-origin: left top;
   transition: transform 0.5s;
+  transition-timing-function: ease-out;
 }
 
 .postTitle a:hover::after {
@@ -67,20 +68,48 @@
 }
 
 .nextPageLink {
-  color: var(--fg);
+  color: var(--bg);
 }
 .nextPageLink a {
   display: block;
+  background-color: #a2a4e9;
   width: 30%;
   margin: 0 auto;
-  border: 1px solid var(--accents-2);
+  border: 2px solid var(--accents-2);
+  border-radius: 8px;
   color: inherit;
-  font-size: 0.85rem;
+  /* font-size: 0.95rem; */
   text-align: center;
   line-height: 3rem;
 }
+
+.nextPageLink a:hover {
+  display: block;
+  background-color: #ffffff00;
+  transition: 0.2s;
+  transition-delay: 0.1s;
+  transition-timing-function: ease-in;
+  width: 30%;
+  margin: 0 auto;
+  border: 2px solid var(--accents-2);
+  border-radius: 8px;
+  color: inherit;
+  /* font-size: 0.95rem; */
+  text-align: center;
+  line-height: 3rem;
+}
+
+.nextPageLink:hover {
+  color: var(--fg);
+  transition: 0.2s;
+  transition-timing-function: ease-in;
+}
+
 @media (max-width: 600px) {
   .nextPageLink a {
+    width: 50%;
+  }
+  .nextPageLink a:hover {
     width: 50%;
   }
 }

@@ -10,6 +10,7 @@ const Bookmark = ({ block }) => {
       url={url}
       className={styles.linkPreview}
       descriptionLength={60}
+      imageHeight={300}
     />
   )
 }

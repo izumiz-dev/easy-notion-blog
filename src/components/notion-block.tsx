@@ -4,6 +4,7 @@ import dynamic from 'next/dynamic'
 const Code = dynamic(() => import('./notion-blocks/code'))
 const Embed = dynamic(() => import('./notion-blocks/embed'))
 const Bookmark = dynamic(() => import('./notion-blocks/bookmark'))
+const Video = dynamic(() => import('./notion-blocks/video'))
 
 import styles from '../styles/notion-block.module.css'
 
@@ -37,7 +38,7 @@ const RichText = ({ richText }) => {
   return element
 }
 
-const colorClass = color => {
+const colorClass = (color) => {
   switch (color) {
     case 'gray':
       return styles.gray
@@ -93,13 +94,15 @@ const Heading3 = ({ block }) => <Heading heading={block.Heading3} level={3} />
 
 const Heading = ({ heading, level = 1 }) => {
   const tag = `h${level + 3}`
-  const id = heading.RichTexts.map(richText => richText.Text.Content)
+  const id = heading.RichTexts.map((richText) => richText.Text.Content)
     .join()
     .trim()
   const htag = React.createElement(
     tag,
     { className: colorClass(heading.Color) },
-    heading.RichTexts.map(richText => <RichText richText={richText} key={id} />)
+    heading.RichTexts.map((richText) => (
+      <RichText richText={richText} key={id} />
+    ))
   )
 
   return (
@@ -202,8 +205,8 @@ const List = ({ block }) => {
 
 const BulletedListItems = ({ blocks }) =>
   blocks
-    .filter(b => b.Type === 'bulleted_list_item')
-    .map(listItem => (
+    .filter((b) => b.Type === 'bulleted_list_item')
+    .map((listItem) => (
       <li
         key={`bulleted-list-item-${listItem.Id}`}
         className={colorClass(listItem.BulletedListItem.Color)}
@@ -224,8 +227,8 @@ const BulletedListItems = ({ blocks }) =>
 
 const NumberedListItems = ({ blocks, level = 1 }) =>
   blocks
-    .filter(b => b.Type === 'numbered_list_item')
-    .map(listItem => (
+    .filter((b) => b.Type === 'numbered_list_item')
+    .map((listItem) => (
       <li
         key={`numbered-list-item-${listItem.Id}`}
         className={colorClass(listItem.NumberedListItem.Color)}
@@ -274,6 +277,8 @@ const NotionBlock = ({ block }) => {
     return <Heading3 block={block} />
   } else if (block.Type === 'image') {
     return <ImageBlock block={block} />
+  } else if (block.Type === 'video') {
+    return <Video block={block} />
   } else if (block.Type === 'code') {
     return <Code block={block} />
   } else if (block.Type === 'quote') {
