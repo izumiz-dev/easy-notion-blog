@@ -66,7 +66,6 @@
   margin: 1.8rem 0 0.8rem;
   color: var(--fg);
   font-size: 1.1rem;
-  background: var(--head-underline);
 }
 
 .post :global(h4):hover::after {
