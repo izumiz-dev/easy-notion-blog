@@ -8,6 +8,30 @@ const RenderPage = () => (
     <div>
       <h2>このブログについて</h2>
       <p>プログラミングのまとめや，ただの日記などを書いています．</p>
+      <h2>技術情報</h2>
+      <p>
+        <a
+          href="https://github.com/otoyo/easy-notion-blog"
+          target="_blank"
+          rel="noreferrer"
+        >
+          easy-notion-blog
+        </a>
+        を元に、独自のカスタマイズなどをしています。
+        <br />
+        また、アップデートなども随時取り入れています。
+      </p>
+      <p>
+        このブログのリポジトリは
+        <a
+          href="https://github.com/izumiz-dev/easy-notion-blog"
+          target="_blank"
+          rel="noreferrer"
+        >
+          こちら
+        </a>
+        です．
+      </p>
       <h2>Links</h2>
       <ul>
         <li>
